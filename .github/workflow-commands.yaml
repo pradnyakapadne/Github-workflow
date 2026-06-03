@@ -1,9 +1,24 @@
 name: Workflow Commands
+
 on: [push]
 
-jobs: 
+jobs:
   testing-wf-commands:
     runs-on: windows-latest
+
     steps:
-      - name: Setting error message
+      - name: Error
         run: echo "::error::Missing semicolon"
+
+      - name: Warning
+        run: echo "::warning::Deprecated API"
+
+      - name: Notice
+        run: echo "::notice::Build Started"
+
+      - name: Group Logs
+        run: |
+          echo "::group::Installing"
+          echo "npm install"
+          echo "npm test"
+          echo "::endgroup::"

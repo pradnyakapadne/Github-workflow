@@ -1,0 +1,13 @@
+name: First workflow
+on: [push]
+
+jobs:
+  run-shell-commands:
+    runs-on: windows-latest
+    steps: 
+      - name: echo a string
+        run: echo "Hello Testing"
+      - name: Mutline Command
+        run: |
+          node -v
+          npm -v
